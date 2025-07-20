@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LT Smoke" parallel="tests" thread-count="1">
+ 
+	<test name="Test1"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.CollisionWithAnotherVehicle_Yes_LT" />
+		</classes> </test>
+		
+	<test name="Test2"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.CollisionWithPedestrian_Yes_3rdParty_LT"
+		/> </classes> </test>
+ 
+	<test name="Test3"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.ParkinglotCollisionScenario3_UnknownParty_Proxy_YES_LT_FI"
+		/> </classes> </test>
+ 
+	<!-- <test name="Test4"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.MotorPurchaseAuthenticatedVaresMotorCycle_LT"
+		/> </classes> </test> -->
+
+	<test name="Test5"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.CarDealer_RegisteredVan_VATI_LT" /> </classes>
+		</test>
+
+	<!-- <test name="Test6"> <parameter name="browser" value="chrome" /> <classes> 
+		<class name="testscripts.scenario1.CarDealer_RegisteredMotorCycle_VARES_LT" 
+		/> </classes> </test> --> 
+
+	<test name="Test7"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.MotorPurchaseAuthenticatedVatiCar_LT"
+		/> </classes> </test>
+		
+	<!-- <packages> <package name="testscripts.scenario1"/> </packages> -->
+ 
+</suite> <!-- Suite -->

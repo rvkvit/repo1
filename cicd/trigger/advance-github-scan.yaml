@@ -1,0 +1,25 @@
+trigger: none
+schedules:
+  - cron: "30 17 * * 6"  # 5:30 PM UTC every Friday
+    displayName: "Weekly scan - Wednesday 11 PM IST"
+    branches:
+      include:
+        - master
+    always: true
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+resources:
+    repositories:
+      - repository: Azure_DevOps_Templates
+        type: git
+        name: LLA/Azure_DevOps_Templates
+        ref: main
+
+stages:
+- stage: Trigger_CI
+  jobs:
+  - job: trigger_ci
+
+- template: CICD_Templates/Advance_Security_templates/general_scan/advance_security_scan.yml@Azure_DevOps_Templates

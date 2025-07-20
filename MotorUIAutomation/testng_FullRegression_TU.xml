@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression_TU" parallel="tests" thread-count="1">
+
+	<!-- Glass Breakage -->
+
+	<test name="Test11"> <parameter name="browser" value="chrome" /> <classes> 
+		<class name="testscripts.scenario1.GlassBreakage_RoleDriver_TU" /> </classes> 
+		</test>
+	<test name="Test12"> <parameter name="browser" value="chrome" /> <classes> 
+		<class name="testscripts.scenario1.GlassBreakage_RolePH_TU" /> </classes> 
+		</test>
+	<test name="Test13"> <parameter name="browser" value="chrome" /> <classes> 
+		<class name="testscripts.scenario1.GlassBreakage_RoleOwner_TU" /> </classes> 
+		</test>
+	<test name="Test14"> <parameter name="browser" value="chrome" /> <classes> 
+		<class name="testscripts.scenario1.GlassBreakage_RoleProxy_TU" /> </classes> 
+		</test>
+
+	<!-- Collision -->
+
+	 <test name="Test21"> <parameter name="browser" value="chrome" /> <classes> 
+		<class name="testscripts.scenario1.CollisionWithAnotherVehicle_YES_TU" /> 
+		</classes> </test>
+
+	<!-- <packages> <package name="testscripts.scenario1"/> </packages> -->
+
+</suite> <!-- Suite -->

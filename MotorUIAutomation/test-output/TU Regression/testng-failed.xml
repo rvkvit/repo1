@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="tests" name="Failed suite [TU Regression]" guice-stage="DEVELOPMENT">
+<<<<<<< HEAD
+  <test thread-count="1" parallel="tests" name="Test91(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="testscripts.scenario1.MotorPurchaseAuthenticatedVatiCar_TU">
+=======
+  <test thread-count="1" parallel="tests" name="Test72(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="testscripts.scenario1.CarDealer_RegisteredMotorCaravan_VATI_TU">
+>>>>>>> 9352c1e4407ef1d3cabcbb9ce91149e2e889d700
+        <methods>
+          <include name="runTC1" invocation-numbers="0"/>
+          <include name="suiteTearDown"/>
+          <include name="suiteSetup"/>
+          <include name="testMethodTearDown"/>
+          <include name="testMethodSetup"/>
+        </methods>
+<<<<<<< HEAD
+      </class> <!-- testscripts.scenario1.MotorPurchaseAuthenticatedVatiCar_TU -->
+    </classes>
+  </test> <!-- Test91(failed) -->
+=======
+      </class> <!-- testscripts.scenario1.CarDealer_RegisteredMotorCaravan_VATI_TU -->
+    </classes>
+  </test> <!-- Test72(failed) -->
+>>>>>>> 9352c1e4407ef1d3cabcbb9ce91149e2e889d700
+</suite> <!-- Failed suite [TU Regression] -->

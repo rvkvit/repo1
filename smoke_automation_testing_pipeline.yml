@@ -1,0 +1,55 @@
+pr: none
+
+trigger: none
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+parameters:
+
+  - name: automationTestingAgentPool
+    displayName: Agent Pool
+    type: string
+    default: Linux-sha-SIT
+    values:
+    - Linux-sha-SIT
+
+  - name: environment
+    displayName: Environment
+    type: string
+    default: SIT1
+    values:
+    - SIT1
+
+  - name: testSuite
+    displayName: Test Suite
+    type: string
+    default: MotorUIAutomation
+
+stages:
+
+  - stage: Automation_Testing_Smoke_LT
+    displayName: Automation Testing Smoke LT
+
+    jobs:
+    - template: pipeline/automation_testing.yml
+      parameters:
+          repositoryName: 'self'
+          app: 'testng_smoke_LT'
+          project: 'ss'
+          environment: '${{parameters.environment}}'
+          automationTestingAgentPool: '${{parameters.automationTestingAgentPool}}'
+          testSuite: '${{parameters.testSuite}}' 
+
+  - stage: Automation_Testing_Smoke_TU
+    displayName: Automation Testing Smoke TU
+
+    jobs:
+    - template: pipeline/automation_testing.yml
+      parameters:
+          repositoryName: 'self'
+          app: 'testng_smoke_TU'
+          project: 'ss'
+          environment: '${{parameters.environment}}'
+          automationTestingAgentPool: '${{parameters.automationTestingAgentPool}}'
+          testSuite: '${{parameters.testSuite}}' 

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TU Light Regression" parallel="tests" thread-count="1">
+
+	 <test name="Test1"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.NaturalPhenomenonS4_TU" /> </classes>
+		</test>
+ 
+	<test name="Test2"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.TT_Driver_TU" /> </classes> </test>
+ 
+	<test name="Test3"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.GlassBreakage_RoleProxy_TU" /> </classes>
+		</test>
+ 
+	<test name="Test4"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.Vandalism_PH_NoPC_DamageCausedByAnotherVehicle_TU"
+		/> </classes> </test>
+ 
+	<test name="Test5"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.CollisionWithBicycle_Yes_PH_TU" /> </classes>
+		</test>
+ 
+	<test name="Test6"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.CollisionWithAnimal_Yes_PH_TU" /> </classes>
+		</test>
+ 
+	<test name="Test7"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.Fire_HD_Owner_TU" /> </classes> </test>
+ 
+	<test name="Tests8"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.TheftScenario7_VehicleHasbeenfound_YES_Ownerofvehicle_Turva"
+		/> </classes> </test>
+ 
+	<test name="Test9"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.ParkinglotCollisionScenario4_UnknownParty_Proxy_NO_Turva"
+		/> </classes> </test>
+
+	<test name="Test10"> <parameter name="browser" value="chrome" /> <classes> 
+		<class name="testscripts.scenario1.PolicydetailsMFNOLScenario5_CancelMFNOL_PH_Turva" 
+		/> </classes> </test>
+ 
+	<test name="Test11"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.VDSScenario2_Fire_VehicledamagesfromQuestion_Truck_PH_Turva"
+		/> </classes> </test>
+		
+	<test name="Test12"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.VDSScenario7_theft_VehicledamagesfromQuestion_Moped_PH_Turva"
+		/> </classes> </test>
+ 
+	<test name="Test13"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.MotorPolicyScenario4_Turva" /> </classes>
+		</test>
+ 
+	<!-- <test name="Test14"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.MotorPurchaseAnonymousVaresMotorCaravan_TU"
+		/> </classes> </test> -->
+ 
+	<test name="Test15"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.CarDealer_RegisteredCar_VATI_TU" /> </classes>
+		</test>
+		
+	<test name="Test16"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.CarDealer_RegisteredTractor_VATI_TU" />
+		</classes> </test>
+ 
+	<!-- <test name="Test17"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.CarDealer_RegisteredVan_VARES_TU" /> </classes>
+		</test> -->
+
+	<test name="Test18"> <parameter name="browser" value="chrome" /> <classes> 
+		<class name="testscripts.scenario1.MotorPurchaseAuthenticatedVatiVan_TU" 
+		/> </classes> </test>
+ 
+	<test name="Test19"> <parameter name="browser" value="chrome" /> <classes>
+		<class name="testscripts.scenario1.CarDealer_UnregisteredCar_VATI_TU" />
+		</classes> </test> 
+		
+	<!-- <packages> <package name="testscripts.scenario1"/> </packages> -->
+ 
+</suite> <!-- Suite -->

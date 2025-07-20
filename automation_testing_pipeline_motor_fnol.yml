@@ -1,0 +1,57 @@
+pr: none
+
+trigger: none
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+parameters:
+
+  - name: automationTestingAgentPool
+    displayName: Agent Pool
+    type: string
+    default: Linux-sha-SIT
+    values:
+    - Linux-sha-SIT
+
+  - name: environment
+    displayName: Environment
+    type: string
+    default: sit
+    values:
+    - SIT
+    - UAT
+
+  - name: testSuite
+    displayName: Test Suite
+    type: string
+    default: MotorUIAutomation
+
+  - name: app
+    displayName: App
+    type: string
+    default: testng_regression_LT
+    values:
+    - testng_regression_LT
+    - testng_regression_TU
+    - testng_sanity_LT
+    - testng_sanity_TU
+    - testng_smoke_LT
+    - testng_smoke_TU
+    - testng_FullRegression_LT
+    - testng_FullRegression_TU
+
+stages:
+
+  - stage: Automation_Testing_TU
+    displayName: Automation Testing TU
+
+    jobs:
+    - template: pipeline/automation_testing.yml
+      parameters:
+          repositoryName: 'self'
+          app: '${{parameters.app}}'
+          project: 'ss'
+          environment: '${{parameters.environment}}'
+          automationTestingAgentPool: '${{parameters.automationTestingAgentPool}}'
+          testSuite: '${{parameters.testSuite}}' 

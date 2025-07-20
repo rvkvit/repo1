@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sanity" parallel="classes" thread-count="1">
+
+	<test name="Test1">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="testscripts.scenario1.MotorPolicyScenario1_LT" />
+		</classes>
+	</test>
+	<test name="Test2">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="testscripts.scenario1.MotorPolicyScenario1_Turva" />
+		</classes>
+	</test>
+	<test name="Test3">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="testscripts.scenario1.CollisionWithPedestrian_Yes_3rdParty_TU" />
+		</classes>
+	</test>
+	<test name="Test4">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="testscripts.scenario1.CollisionWithPedestrian_No_3rdParty_LT" />
+		</classes>
+	</test>
+	<test name="Test5">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="testscripts.scenario1.Vandalism_Driver_OtherDamages_TU" />
+		</classes>
+	</test>
+	<test name="Test6">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="testscripts.scenario1.Vandalism_Driver_OtherDamages_LT" />
+		</classes>
+	</test>
+	<test name="Test7">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="testscripts.scenario1.TT_Proxy_TU" />
+		</classes>
+	</test>
+	<test name="Test8">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="testscripts.scenario1.TT_Proxy_LT" />
+		</classes>
+	</test>
+	<test name="Test9">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="testscripts.scenario1.Fire_HD_Owner_LT" />
+		</classes>
+	</test>
+	<test name="Test10">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="testscripts.scenario1.Fire_HD_Owner_TU" />
+		</classes>
+	</test>
+	<test name="Test11">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="testscripts.scenario1.ParkinglotCollisionScenario1_KnownVehicle_PH_YES_Turva" />
+		</classes>
+	</test>
+	<test name="Test12">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="testscripts.scenario1.ParkinglotCollisionScenario1_KnownVehicle_PH_YES_LT_FI" />
+		</classes>
+	</test>
+	<test name="Test13">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="testscripts.scenario1.MotorPurchaseAuthenticatedVatiCar_LT" />
+		</classes>
+	</test>
+	<test name="Test14">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="testscripts.scenario1.MotorPurchaseAuthenticatedVatiCar_TU" />
+		</classes>
+	</test>
+	<test name="Test15">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="testscripts.scenario1.MotorPurchaseAuthenticatedVaresMotorCycle_LT" />
+		</classes>
+	</test>
+	<test name="Test16">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="testscripts.scenario1.MotorPurchaseAuthenticatedVaresMotorCycle_TU" />
+		</classes>
+	</test>
+	<test name="Test17">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="testscripts.scenario1.CarDealer_RegisteredLightTrailer_VARES_LT" />
+		</classes>
+	</test>
+	<test name="Test18">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="testscripts.scenario1.CarDealer_RegisteredLightTrailer_VARES_TU" />
+		</classes>
+	</test>
+	<test name="Test19">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="testscripts.scenario1.CarDealer_RegisteredQuadBike_VATI_LT" />
+		</classes>
+	</test>
+	<test name="Test20">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class
+				name="testscripts.scenario1.CarDealer_RegisteredQuadBike_VATI_TU" />
+		</classes>
+	</test>
+	<test name="Test21">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="testscripts.scenario1.GeneralValidations_LT" />
+		</classes>
+	</test>
+	<test name="Test22">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="testscripts.scenario1.GeneralValidations_TU" />
+		</classes>
+	</test>
+
+</suite> <!-- Suite -->

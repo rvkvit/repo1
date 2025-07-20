@@ -1,0 +1,48 @@
+---
+parameters:
+  project: ''
+  brand: ''
+  fullBrandInCaps: ''
+  testSuite: ''
+  app: ''
+  languageCode: ''
+  checkoutTestingRepo: ''
+  repositoryName: ''
+  environment: ''
+
+steps:
+  # - bash: |
+  #     ls -al $(System.DefaultWorkingDirectory)/MotorUIAutomation/
+  #     chmod +x $(System.DefaultWorkingDirectory)/MotorUIAutomation/Driver/Linux/chromedriver
+  #   displayName: Make Chrome Driver File Executable
+
+  - bash: |
+      pwd # s/{{parameters.repositoryName}}/
+      ls
+      echo "Environment: ${{parameters.environment}} "
+      # export LC_ALL=en_US.UTF-8
+    workingDirectory: $(System.DefaultWorkingDirectory)/${{parameters.testSuite}}
+    displayName: List Contents of Dir
+
+  - bash: |
+      sed -i -e "s/{{ENVIRONMENT}}/${{parameters.environment}}/g" "Global Settings.properties"
+    workingDirectory: $(System.DefaultWorkingDirectory)/${{parameters.testSuite}}
+    displayName: Update Properties
+
+  - ${{ if or(eq(parameters.project, 'cis'), eq(parameters.project, 'dcc'), eq(parameters.project, 'ss')) }}:
+    - bash: | 
+        sudo locale-gen fi_FI.UTF-8
+        sudo locale-gen fi_FI
+        export LANG="fi_FI"
+ 
+        xvfb-run --server-args=":99 -screen 0 1366x768x24" mvn package -DsuiteXmlFile="${{parameters.app}}.xml"
+      workingDirectory: $(System.DefaultWorkingDirectory)/${{parameters.testSuite}}
+      displayName: Run Tests - ${{parameters.app}}
+      continueOnError: true
+
+  - task: PublishPipelineArtifact@1
+    inputs:
+      targetPath: '$(System.DefaultWorkingDirectory)/${{parameters.testSuite}}/Results'
+      artifact: '${{parameters.environment}}_${{parameters.app}}_Automation_Test_Results'
+      publishLocation: 'pipeline'
+    displayName: Publish Results to Pipeline

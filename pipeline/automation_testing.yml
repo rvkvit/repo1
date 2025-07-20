@@ -1,0 +1,39 @@
+parameters:
+  repositoryName: ''
+  app: ''
+  testSuite: ''
+  project: ''
+  brand: ''
+  languageCode: ''
+  automationTestAgentPool: 'Linux'
+  automationTestRepoName: ''
+  environment: ''
+
+jobs:
+- job: Language_tests
+  displayName: 'Language Tests'
+  timeoutInMinutes: 0
+
+  pool:
+      ${{ if eq(parameters.project, 'dcc') }}:
+        name: Linux-sha-SIT
+        demands:
+        - AGENT_ENVIRONMENT -equals dcc
+      ${{ if eq(parameters.project, 'ss') }}:
+        name: Linux-sha-SIT
+        demands:
+        - AGENT_ENVIRONMENT -equals testing
+      ${{ if eq(parameters.project, 'cis') }}:
+        name: Linux-sha-SIT
+        demands:
+        - AGENT_ENVIRONMENT -equals cis
+        
+  steps:
+
+    - template: task_templates/automation_testing_tasks.yml
+      parameters:
+        app: '${{parameters.app}}'
+        testSuite: '${{parameters.testSuite}}'
+        project: '${{parameters.project}}'
+        repositoryName: '{{parameters.repositoryName}}'
+        environment: '${{parameters.environment}}'

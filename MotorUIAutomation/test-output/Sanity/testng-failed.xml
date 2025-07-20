@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="1" parallel="classes" name="Failed suite [Sanity]" guice-stage="DEVELOPMENT">
+  <test thread-count="1" parallel="classes" name="Test21(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="testscripts.scenario1.GeneralValidations_LT">
+        <methods>
+          <include name="runTC1" invocation-numbers="0"/>
+          <include name="suiteTearDown"/>
+          <include name="suiteSetup"/>
+          <include name="testMethodTearDown"/>
+          <include name="testMethodSetup"/>
+        </methods>
+      </class> <!-- testscripts.scenario1.GeneralValidations_LT -->
+    </classes>
+  </test> <!-- Test21(failed) -->
+  <test thread-count="1" parallel="classes" name="Test22(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="testscripts.scenario1.GeneralValidations_TU">
+        <methods>
+          <include name="suiteSetup"/>
+          <include name="suiteTearDown"/>
+          <include name="testMethodTearDown"/>
+          <include name="testMethodSetup"/>
+          <include name="runTC1" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- testscripts.scenario1.GeneralValidations_TU -->
+    </classes>
+  </test> <!-- Test22(failed) -->
+</suite> <!-- Failed suite [Sanity] -->
